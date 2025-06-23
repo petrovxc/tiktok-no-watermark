@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:url" content="/petrovxc">
+
+    <title>bat tok</title>
+
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/logo.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cosmo.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/anim.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bottom.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;1,200&display=swap" rel="stylesheet">
+
+
+    <style>
+        body {
+            background: url("{{ url_for('static', filename='img/bg.jpg') }}") no-repeat center center / cover;
+        }
+
+        .watermark {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            color: rgba(0, 0, 0, 0.5);
+            font-size: 14px;
+        }
+
+        #center-box {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .center-content {
+            background-color: rgba(24, 23, 23, 0.95); /* light gray with a bit of transparency */
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
+            max-width: 500px;
+            width: 90%;
+        }
+
+        #main h1 {
+            margin-bottom: 20px;
+        }
+        
+        input[type="submit"] {
+            color: rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+            background-color: rgb(211, 206, 206);
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div id="center-box">
+        <div class="center-content">
+        <div id="main">
+            <h1><div class="typewriter" id="typewriter"></div></h1>
+        </div>
+
+        <form action="/" method="POST">
+            <input type="text" id="raw_url" placeholder="https://vm.tiktok.com/ZMLYJPWBp/" name="raw_url"><br>
+            <input type="submit" value="Download">
+        </form>
+        </div>
+    </div>
+
+    <div class="watermark"><p>github.com/petrovxc</p></div>
+
+
+    <script src="{{ url_for('static', filename='js/typewriter.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/sparkle.js') }}"></script>
+
+    <script>
+        new Typewriter('#typewriter', {
+            strings: ['fastest', 'free to use', 'no watermark'],
+            delay: 'natural',
+            cursor: '|',
+            autoStart: true,
+            loop: true
+        });
+    </script>
+</body>
+
+</html>
